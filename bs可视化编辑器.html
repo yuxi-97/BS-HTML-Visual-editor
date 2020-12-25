@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> PyPanda社区 </title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		a.panel-title{
+			position: relative;
+		}
+
+		.panel-heading{
+			background-color: #aaa;
+		}
+		
+		a.panel-title::before {
+			margin: 0;
+			padding:0;
+			content: '';
+			position: absolute;
+			top: -10px; right: -120px;
+			bottom: -10px; left: -50px;
+		} 
+
+		.输入框{
+			width:100%;
+			height: 500px;
+		}
+
+		.container{
+			margin: 0;
+			width: 100%;
+		}
+
+		.col-change{
+			min-width: 150px;
+		}
+
+		.组件界面{
+			background-color: #fff;
+			height: 70vh;
+			overflow:auto;
+		}
+
+		.tab-pane.active.元素交互区 > div *{
+			position: relative;
+			left: 10px;
+			border:solid rgba(255,0,0,0.5) 1px;
+			min-height: 30px;
+			max-width: 100%;
+		}
+
+		.isChoice{
+			background-color: rgba(225,225,225,0.5) !important;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<!-- 功能栏 -->
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="btn-group">
+				 <button class="btn btn-default">文件</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li id="new">
+						 <a href="#">新建组件</a>
+					</li>
+					<li id="rename">
+						 <a href="#">组件重命名</a>
+					</li>
+				</ul>
+			</div>
+			<div class="btn-group">
+				 <button class="btn btn-default">功能</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li id="preview">
+						 <a href="#">预览</a>
+					</li>
+					<li id="import">
+						 <a href="#">导入</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- BS部件盒 -->
+	<div class="row clearfix">
+		<div class="col-md-1 column col-change">
+			<div class="panel-group" id="panel-546513">
+				<!-- 布局 -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 <a class="panel-title" data-toggle="collapse" data-parent="#panel-546513" href="#panel-element-布局">布局</a>
+					</div>
+					<div id="panel-element-布局" class="panel-collapse collapse in">
+						<div class="panel-body">
+							横向布局(row)
+						</div>
+						<div class="panel-body">
+							纵向布局(col)
+						</div>
+					</div>
+				</div>
+				<!-- 按钮 -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 <a class="panel-title" data-toggle="collapse" data-parent="#panel-546513" href="#panel-element-按钮">按钮</a>
+					</div>
+					<div id="panel-element-按钮" class="panel-collapse collapse">
+						<div class="panel-body">
+							默认按钮
+						</div>
+						<div class="panel-body">
+							下拉框按钮
+						</div>
+						<div class="panel-body">
+							分割式下拉框
+						</div>
+						<div class="panel-body">
+							按钮组
+						</div>
+					</div>
+				</div>
+				<!-- 导航栏 -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 <a class="panel-title" data-toggle="collapse" data-parent="#panel-546513" href="#panel-element-导航">导航</a>
+					</div>
+					<div id="panel-element-导航" class="panel-collapse collapse">
+						<div class="panel-body">
+							导航栏
+						</div>
+						<div class="panel-body">
+							选项卡
+						</div>
+						<div class="panel-body">
+							手风琴切换
+						</div>
+						<div class="panel-body">
+							分页
+						</div>
+						<div class="panel-body">
+							路径
+						</div>
+						<div class="panel-body">
+							列表组
+						</div>
+					</div>
+				</div>
+				<!-- 表单 -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 <a class="panel-title" data-toggle="collapse" data-parent="#panel-546513" href="#panel-element-表单">表单</a>
+					</div>
+					<div id="panel-element-表单" class="panel-collapse collapse">
+						<div class="panel-body">
+							登陆界面表单
+						</div>
+						<div class="panel-body">
+							注册界面表单
+						</div>
+					</div>
+				</div>
+				<!-- 徽章 -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						 <a class="panel-title" data-toggle="collapse" data-parent="#panel-546513" href="#panel-element-徽章">徽章</a>
+					</div>
+					<div id="panel-element-徽章" class="panel-collapse collapse">
+						<div class="panel-body">
+							disabled
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-10 column">
+			<div class="tabbable" id="tabs-697887">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						 <a href="#panel-组件1" data-toggle="tab" onclick="清除选中()">组件 1</a>
+					</li>
+					<li>
+						 <a href="#panel-组件2" data-toggle="tab" onclick="清除选中()">组件 2</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active 元素交互区" id="panel-组件1">
+						<div class="container 组件 组件界面" >
+							<style type="text/css" class="组件界面">
+								.container.组件.组件界面{min-height:70vh;overflow: auto;}
+								.container.组件.组件界面 col{width:30px;}
+
+							</style>
+							<script type="text/javascript" class="组件界面"></script>
+						</div>
+					</div>
+					<div class="tab-pane 元素交互区" id="panel-组件2">
+						<div class="container 组件 组件界面" >
+							<style type="text/css" class="组件界面">
+								.container.组件.组件界面{min-height:70vh;overflow: auto;}
+								.container.组件.组件界面 col{width:30px;}
+							</style>
+							<script type="text/javascript" class="组件界面"></script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4 column">
+		</div>
+	</div>
+
+	<!-- 元素管理器 -->
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="tabbable" id="tabs-315561">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						 <a href="#panel-属性" data-toggle="tab">属性</a>
+					</li>
+					<li>
+						 <a href="#panel-样式" data-toggle="tab">样式</a>
+					</li>
+					<li>
+						 <a href="#panel-JavaScript" data-toggle="tab">JavaScript</a>
+					</li>
+					<li>
+						 <a href="#panel-html" data-toggle="tab">html</a>
+					</li>
+					<li class="全局样式">
+						 <a href="#panel-全局样式" data-toggle="tab">全局样式</a>
+					</li>
+					<li class="全局JavaScript">
+						 <a href="#panel-全局JavaScript" data-toggle="tab">全局JavaScript</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-属性">
+						<textarea class="输入框 panel-属性"></textarea>
+					</div>
+					<div class="tab-pane" id="panel-样式">
+						<textarea class="输入框 panel-样式"></textarea>
+					</div>
+					<div class="tab-pane" id="panel-JavaScript">
+						<textarea class="输入框 panel-JavaScript"></textarea>
+					</div>
+					<div class="tab-pane" id="panel-html">
+						<textarea class="输入框 panel-html"></textarea>
+					</div>
+					<div class="tab-pane" id="panel-全局样式">
+						<textarea class="输入框 panel-全局样式"></textarea>
+					</div>
+					<div class="tab-pane" id="panel-全局JavaScript">
+						<textarea class="输入框 panel-全局JavaScript"></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="bs可视化编辑器-基础功能.js"></script>
+<script type="text/javascript" src="bs可视化编辑器-交互功能.js"></script>
+</html>
